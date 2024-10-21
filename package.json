@@ -2,8 +2,10 @@
   "name": "back-end-1",
   "version": "1.0.0",
   "description": "Nodemo Assingment 1",
+  "type": "module" ,
   "main": "index.js",
   "scripts": {
+    "dev": "nodemon src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Kaapo.K",
