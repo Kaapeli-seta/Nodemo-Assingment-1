@@ -16,7 +16,7 @@ const postItmes = (req, res) => {
     })
     .on('end', () => {
       body = Buffer.concat(body).toString();
-      res.end(body);
+      res.end(body); // res ei tarvitseolla body voi olla tyhjä tai String
       items.push(JSON.parse(body));
     });
 };

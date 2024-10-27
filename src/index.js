@@ -11,14 +11,14 @@ const server = http.createServer((req, res) => {
   } else if (req.url === '/items' && req.method === 'POST') {
     postItmes(req, res);
   } else if (req.method === 'DELETE') {
-    res.writeHead(404, {'Content-Type': 'text/plain'});
-    res.end('Can not delete data');
+    res.writeHead(501, {'Content-Type': 'application/json'});
+    res.end(JSON.stringify({error: '501', message: 'can not delete data'}));
   } else if (req.method === 'PUT') {
-    res.writeHead(404, {'Content-Type': 'text/plain'});
-    res.end('Can not modify data');
+    res.writeHead(501, {'Content-Type': 'application/json'});
+    res.end(JSON.stringify({error: '501', message: 'can not modify data'}));
   } else {
-    res.writeHead(404, {'Content-Type': 'application/json'});
-    res.end(JSON.stringify({error: '404', message: 'Method not available'}));
+    res.writeHead(501, {'Content-Type': 'application/json'});
+    res.end(JSON.stringify({error: '501', message: 'Method not available'}));
   }
 });
 
